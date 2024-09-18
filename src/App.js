@@ -186,7 +186,7 @@ const setGeoClimbData = (climbArray) => {
                             
                         }}
                     >
-                        <Searchdropdown handlesearchType={handlesearchType} />
+                        <Searchdropdown windowSize = {windowSize} handlesearchType={handlesearchType} />
                     </div>
                 </div>
                 </>): 
@@ -201,7 +201,7 @@ const setGeoClimbData = (climbArray) => {
                         fontFamily: 'Comic Sans MS, cursive'
                     }}
                 > 
-                <NavBarDropDown/>
+                <NavBarDropDown climbsArrayforSearch = {climbsArrayforSearch} addCimbModalShow = {addCimbModalShow}/>
                 </div>
                 
                     
@@ -248,7 +248,7 @@ const setGeoClimbData = (climbArray) => {
                             width: '25px',
                         }}
                     >
-                        <Searchdropdown handlesearchType={handlesearchType} />
+                        <Searchdropdown windowSize = {windowSize} handlesearchType={handlesearchType} />
                     </div>
                 </div>
                 
@@ -257,11 +257,13 @@ const setGeoClimbData = (climbArray) => {
 
             <MapContainer
                 center = {[0, 0]}
+                minZoom={3}
                 zoom={3}
                 scrollWheelZoom={true}
                 loadingControl={true}
                 style={{ height: '100vh', width: '100%' }}
                 zoomControl={false}
+
             >
             {windowSize.width>1000?(
                 <div

@@ -2,7 +2,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import React, { useState, useEffect,useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Searchdropdown = ({handlesearchType}) => {
+const Searchdropdown = ({handlesearchType, windowSize}) => {
 
 
   const [isHovered, setIsHovered] = useState(false);
@@ -76,7 +76,7 @@ return (
       </svg>
     </div>
 
-{filterToggle?(<div ref={filterRef} style = {{position:'absolute',left:'104px',width:'300px',marginTop: '7.5px'}}>
+{filterToggle?(<div ref={filterRef} style = {{position:'absolute',left:windowSize.width>1000?'104px':'154px',width: windowSize.width>1000?'300px':'200px',marginTop: '7.5px'}}>
 <ListGroup >
 {searchArray.map((item, index) => (
   item !== searchType?(
