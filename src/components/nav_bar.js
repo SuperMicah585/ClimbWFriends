@@ -13,7 +13,7 @@ const handleMouseLeave = (e) => {
 
   setIsHovered(false);
 };
-    const items = ['Road Map','About']
+    const items = ['About','Contact','Usage']
     
 return(
     <div style = {{display: 'flex', marginTop: '20px'}}>

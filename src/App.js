@@ -15,6 +15,7 @@ import ClimbsModal from './components/climbs_Modal';
 import sprout from './sprout.png'
 import Navbar from './components/nav_bar'
 import DownloadButton from './components/download_button'
+import NavBarDropDown from './components/nav_bar_dropdown'
 /*
 TODO
 
@@ -24,6 +25,8 @@ Allow the ability to upload .json file
     -be able to add people to this file
 Create the Docs for the navbar
 Change view when screen gets smaller
+//When width  of viewport is <1000 change to different style
+//Docs will be modals in order to preserve current data
 */
 function App() {
 
@@ -35,7 +38,10 @@ function App() {
     const [climbgeoData,setClimbGeoData] = useState([])
     const [climbsArrayforSearch,setClimbsArrayforSearch] = useState([])
     const [nameButtonColorArray,setNameButtonColorArray] = useState({})
-  
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
 
     
     const coordinatesCallback = (coordinates) => {
@@ -82,10 +88,31 @@ const setGeoClimbData = (climbArray) => {
 
   }
 
+ 
+
+  
+    useEffect(() => {
+      // Handler to call on window resize
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+  
+      // Add event listener to track window resize
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup the event listener on component unmount
+      return () => window.removeEventListener('resize', handleResize);
+    }, []); // Empty array ensures that effect is only run on mount and unmount
+
 
 
     return (
         <div style={{ height: '100vh' }}>
+
+            
             <div
                 style={{
                     height: '70px',
@@ -99,6 +126,9 @@ const setGeoClimbData = (climbArray) => {
                     alignItems: 'center',
                 }}
             >
+
+{windowSize.width>1000?
+                (<>
                 <div style = {{display:'flex'}}>
                 <img src={sprout} style = {{marginLeft: '10px',marginTop:'5px',zIndex:1004,width:'60px', height:'60px', borderRadius: '50%' }} />
                 <div style = {{marginLeft: '20px'}}> </div>
@@ -141,13 +171,77 @@ const setGeoClimbData = (climbArray) => {
                             coordinatesCallback={coordinatesCallback}
                             climbsArrayforSearch = {climbsArrayforSearch}
                         />
+                       
                     </div>
                     <div style={{ marginRight: '10px' }}></div>
                     <div
                         style={{
                             backgroundColor: 'white',
                             zIndex: 3000,
-                            postition: 'absolute',
+                            //position: 'absolute',
+                            marginLeft: '-43px',
+                            marginTop: '23px',
+                            height: '25px',
+                            width: '25px',
+                            
+                        }}
+                    >
+                        <Searchdropdown handlesearchType={handlesearchType} />
+                    </div>
+                </div>
+                </>): 
+                
+                <div>
+                <div
+                    style={{
+                        zIndex: 3000,
+                        position: 'absolute',
+                        left: '10px',
+                        marginTop: '5px',
+                        fontFamily: 'Comic Sans MS, cursive'
+                    }}
+                > 
+                <NavBarDropDown/>
+                </div>
+                
+                    
+                    
+                    
+                    
+                    <div
+                    style={{
+                        zIndex: 1004,
+
+                        position: 'absolute',
+                        top: '0px',
+                        left: '50%',
+                        width: '500px', // Adjust width as needed
+                        height: '100px', // Adjust height as needed
+                        transform: 'translateX(-50%)', // Center the element horizontally
+                        justifyContent: 'center',
+                        display: 'flex',
+                    }}
+                >
+                    <div
+                        style={{
+                            marginTop: '7px',
+                            width: '200px',
+                            maxHeight: '50px',
+                        }}
+                    >
+                        <PrefixSearch
+                            searchType={queryType}
+                            coordinatesCallback={coordinatesCallback}
+                            climbsArrayforSearch = {climbsArrayforSearch}
+                        />
+                       
+                    </div>
+                    <div style={{ marginRight: '10px' }}></div>
+                    <div
+                        style={{
+                            backgroundColor: 'white',
+                            zIndex: 3000,
+                            //position: 'absolute',
                             marginLeft: '-43px',
                             marginTop: '23px',
                             height: '25px',
@@ -157,6 +251,8 @@ const setGeoClimbData = (climbArray) => {
                         <Searchdropdown handlesearchType={handlesearchType} />
                     </div>
                 </div>
+                
+                </div>}
             </div>
 
             <MapContainer
@@ -167,6 +263,7 @@ const setGeoClimbData = (climbArray) => {
                 style={{ height: '100vh', width: '100%' }}
                 zoomControl={false}
             >
+            {windowSize.width>1000?(
                 <div
                     style={{
                         zIndex: 1000,
@@ -194,7 +291,7 @@ const setGeoClimbData = (climbArray) => {
                 Reset View
                 </div>
                 <div style ={{marginRight: '30px'}}></div>
-                </div>
+                </div>):null}
 
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

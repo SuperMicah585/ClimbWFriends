@@ -45,6 +45,8 @@ const AddClimbModal = ({modalTrigger,setGeoClimbData,climbsArrayCallback,buttonC
       setmpURL('')
       setName('')
       seterrorAlert(false)
+      setErrorAlertUpload(false)
+      setNameErrorAlert(false)
       setShow(false)}
     const [radioValue, setRadioValue] = useState('1');
 

@@ -2,7 +2,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import React, { useState, useEffect,useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Searchdropdown = ({handlesearchType}) => {
+const NavBarDropDown = ({handlesearchType}) => {
 
 
   const [isHovered, setIsHovered] = useState(false);
@@ -11,13 +11,13 @@ const Searchdropdown = ({handlesearchType}) => {
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
   
-var searchArray = ['climbs','city','postalcode','street']
-const [searchType, setsearchType] = useState('climbs')
+var searchArray = ['Docs','Actions']
 const filterRef = useRef(null);
 
 const handleClick = (text) => {
-setsearchType(text)
-handlesearchType(text)
+///setsearchType(text)
+//handlesearchType(text)
+//d
 setfilterToggle(false)
 }
 const toggleFilter = () =>{
@@ -50,7 +50,7 @@ return (
       style={{
         display: 'inline-block',
         padding: '5px', // Add padding to the circle
-        borderRadius: '50%', // Keep the circle shape
+        borderRadius: '10%', // Keep the circle shape
         cursor: 'pointer',
         position: 'relative',
         zIndex: isHovered ? 10 : 1, // Raise the element when hovered
@@ -61,36 +61,27 @@ return (
       onMouseLeave={handleMouseLeave}
       onClick={toggleFilter}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="21"
-        height="21"
-        fill="black"
-        className="bi bi-filter"
-        viewBox="0 0 16 16"
-        style={{
-          display: 'block',
-        }}
-      >
-        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
-      </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+</svg>
     </div>
 
-{filterToggle?(<div ref={filterRef} style = {{position:'absolute',left:'104px',width:'300px',marginTop: '7.5px'}}>
+{filterToggle?(<div ref={filterRef} style = {{position:'absolute',left:'-7px',width:'100px',marginTop: '5px'}}>
 <ListGroup >
 {searchArray.map((item, index) => (
-  item !== searchType?(
+
   <ListGroup.Item 
   onMouseEnter={() => setHoveredIndex(index)}
   onMouseLeave={() => setHoveredIndex(null)}
   style={{
     backgroundColor: hoveredIndex === index ? 'Whitesmoke' : 'white',
     cursor: 'pointer',
-    fontFamily: 'Comic Sans MS, cursive' 
+    fontFamily: 'Comic Sans MS, cursive',
+    fontSize:'18px'
   }}
   key={index} onClick={() => handleClick(item)}>
     {item}
-  </ListGroup.Item>):null
+  </ListGroup.Item>
 ))}
 </ListGroup>
     </div>):null
@@ -102,4 +93,4 @@ return (
 
 }
 
-export default Searchdropdown
+export default NavBarDropDown

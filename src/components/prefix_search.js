@@ -114,36 +114,31 @@ finally {
                     option.id === value?.id
                 }
                 sx={{
-                    width: 300,
+                    
                 }}
                 renderInput={(params) => (
                     <TextField
+          
                         {...params}
                         label={`search by ${searchType}`}
-                        InputLabelProps={{
-                            sx: {
-                                '&.Mui-focused': {
-                                    marginTop: '5px',
-                                },
-                                '&.MuiFormLabel-filled': {
-                                    marginTop: '6px',
-                                },
-                            },
-                        }}
+ 
                         sx={{
                             backgroundColor: '#fff', // White background to stand out
-                            borderRadius: '1px', // Rounded corners
+                            borderRadius: '4px', // Adjusted for more rounded corners
                             '& .MuiOutlinedInput-root': {
-                                borderColor: 'rgba(0, 0, 0, 0.23)', // Default border color
-                                '&:hover fieldset': {
-                                    borderColor: '#000', // Darker border on hover
-                                },
-                                '&.Mui-focused fieldset': {
-                                    borderColor: '#000', // Darker border when focused
-                                    borderWidth: '1.5px', // Change the border size when focused
-                                },
+                              borderColor: 'rgba(0, 0, 0, 0.23)', // Default border color
+                              '&:hover fieldset': {
+                                borderColor: '#000', // Darker border on hover
+                              },
+                              '&.Mui-focused fieldset': {
+                                borderColor: '#000', // Darker border when focused
+                                borderWidth: '1.5px', // Change the border size when focused
+                              },
                             },
-                        }}
+                            '& .MuiInputLabel-root': {
+                              fontFamily: 'Comic Sans MS, cursive', // Style the label
+                            }
+                          }}
                     />
                 )}
                 PaperProps={{
