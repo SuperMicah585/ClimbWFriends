@@ -3,7 +3,6 @@ import {GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 //import data from './test.json'
 import L from 'leaflet';
-import * as turf from '@turf/turf';
 import {convertToGeoJSON} from './data_parser';
 
   const GeoJSONMap = ({climbsArray,modalTrigger,climbgeoData}) => {

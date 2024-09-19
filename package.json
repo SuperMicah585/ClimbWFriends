@@ -26,12 +26,20 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ],
+      "rules": {
+        "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+        "eqeqeq": ["warn", "always"],
+        "default-case": ["warn"],
+        "react-hooks/exhaustive-deps": ["warn", {
+          "additionalHooks": "useCallback"
+        }]
+      }
+    },
   "browserslist": {
     "production": [
       ">0.2%",

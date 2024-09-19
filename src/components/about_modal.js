@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import {Modal,Card} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 
 

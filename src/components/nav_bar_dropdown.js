@@ -13,7 +13,6 @@ const NavBarDropDown = ({addCimbModalShow,climbsArrayforSearch,navBarCallback}) 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
   
-var searchArray = ['Docs','Actions']
 const docs = ['About','Contact','Usage']
 const actions = ['Download','Add Climbs']
 const filterRef = useRef(null);
