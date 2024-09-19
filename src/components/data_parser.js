@@ -115,7 +115,7 @@ export function convertToGeoJSON(climbArray) {
            // console.log(convexHull.geometry.coordinates)
            
             const area = turf.area(convexHull);
-            console.log('feature',feature,area)
+        
             if(area<5000){
               convexHull = turf.centroid(convexHull)
             }
