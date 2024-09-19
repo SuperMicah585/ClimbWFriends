@@ -191,7 +191,8 @@ const AddClimbModal = ({modalTrigger,setGeoClimbData,climbsArrayCallback,buttonC
       else{
       try {
         // Make a request to the Flask server using fetch
-        const fetchResponse = await fetch(`http://localhost:5000/scrapeclimbs?mpURL=${encodeURIComponent(mpURL)}&name=${encodeURIComponent(name)}`);
+        console.log(`https://phelpsm4.pythonanywhere.com/scrapeclimbs?mpURL=${encodeURIComponent(mpURL)}&name=${encodeURIComponent(name)}`)
+        const fetchResponse = await fetch(`https://phelpsm4.pythonanywhere.com/scrapeclimbs?mpURL=${encodeURIComponent(mpURL)}&name=${encodeURIComponent(name)}`);
     
         if (!fetchResponse.ok) {
           setIsloading(false)

@@ -64,6 +64,14 @@ useEffect(() => {
             
 
                   <br/>
+                  <li>All shapes on the map are interactive. If you click on a shape it will do the following:</li>
+                <ul>
+                    <li>Display all climbs(grade,name) contained within the region that the shape defines.</li> <br/>
+                    <li>Show all climbers that want to do each climb.</li> <br/>
+                
+
+                </ul>
+     
             <li>This app does not use a database, so in order to 'save' a map you can do the following:</li>
                 <ol>
                     <li>Press the 'Download' button. This will download all of the climbs as a json file from your current map.</li> <br/>
@@ -104,10 +112,10 @@ useEffect(() => {
                 <ul>
                     <li> <span style = {labelStyle }> Climbs</span> - allows the search of any added climb and will place a marker on its exact MP location</li> <br/>
                     <li><span style = {labelStyle }> City/street/postalcode </span> - allows for search using the chosen parameter. Uses nominatim.openstreetmap api and will place a marker based on the returned location  </li> <br/>
-             
+                
 
                 </ul>
-        
+
             
          </ul>
         </Modal.Body>
