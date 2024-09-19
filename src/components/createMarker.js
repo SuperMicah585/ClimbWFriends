@@ -20,6 +20,7 @@ const CreateMarker = ({ coordinates}) => {
   //let marker;
   useEffect(() => {
     //console.log(queryType,"hellsfsdf")
+  
     if (map && coordinates && (coordinates?.center || coordinates[0]?.center)) {
 
       if(marker !== 0){
@@ -50,9 +51,6 @@ const CreateMarker = ({ coordinates}) => {
     } 
     
     
-    else {
-      console.error('Map or coordinates.center is not available');
-    }
   }, [coordinates,map]);
 
   return null; // No UI rendering needed

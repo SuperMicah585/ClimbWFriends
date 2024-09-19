@@ -35,21 +35,28 @@ switch(buttonText){
     const items = ['About','Contact','Usage']
     
 return(
-    <div style = {{display: 'flex', marginTop: '20px'}}>
-
-        {items.map((item) => 
-            <>
-            <div  onClick ={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-            style={{cursor: 'pointer',fontSize:'20px', fontWeight: 'bold',color: (isHovered && hoveredValue==item)? '#cc5500':'#048c7f', fontFamily: 'Comic Sans MS' }}>
-            {item}
-            </div>
-            <div style = {{marginLeft: '20px'}}> </div>
-            </>
-        
-        )}
-        
-
-    </div>
+<div style={{ display: 'flex', marginTop: '20px' }}>
+  {items.map((item, index) => (
+    <React.Fragment key={item + index}> {/* Use React.Fragment with a key */}
+      <div
+        key={item + index}
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          cursor: 'pointer',
+          fontSize: '20px',
+          fontWeight: 'bold',
+          color: isHovered && hoveredValue === item ? '#cc5500' : '#048c7f',
+          fontFamily: 'Comic Sans MS',
+        }}
+      >
+        {item}
+      </div>
+      <div key={item + index + 'margin'} style={{ marginLeft: '20px' }}></div>
+    </React.Fragment>
+  ))}
+</div>
 )
 
 

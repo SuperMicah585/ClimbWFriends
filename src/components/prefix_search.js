@@ -141,12 +141,7 @@ finally {
                           }}
                     />
                 )}
-                PaperProps={{
-                    sx: {
-                        border: '1px solid rgba(0, 0, 0, 0.12)', // Border around the dropdown
-                        backgroundColor: '#fff', // Dropdown background
-                    },
-                }}
+
             />
         </div>
     );

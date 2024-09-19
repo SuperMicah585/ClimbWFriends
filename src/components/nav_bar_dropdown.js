@@ -129,10 +129,10 @@ useEffect(() => {
 const DocsArrowSVG =() => {
   return(
     docDropDownTrigger?
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#048c7f" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#048c7f" className="bi bi-caret-right-fill" viewBox="0 0 16 16">
       <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
     </svg>:
-<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentcolor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentcolor" className="bi bi-caret-left-fill" viewBox="0 0 16 16">
   <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
 </svg>
   )
@@ -141,10 +141,10 @@ const DocsArrowSVG =() => {
 const ActionsArrowSVG =() => {
   return(
     actionsDropDownTrigger?
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#048c7f" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#048c7f" className="bi bi-caret-right-fill" viewBox="0 0 16 16">
       <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
     </svg>:
-<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentcolor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentcolor" className="bi bi-caret-left-fill" viewBox="0 0 16 16">
   <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
 </svg>
   )
@@ -169,8 +169,8 @@ return (
       onMouseLeave={handleMouseLeave}
       onClick={toggleFilter}
     >
-<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill={filterToggle?"#048c7f" :"currentColor"} class="bi bi-list" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill={filterToggle?"#048c7f" :"currentColor"} className="bi bi-list" viewBox="0 0 16 16">
+  <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
 </svg>
     </div>
 

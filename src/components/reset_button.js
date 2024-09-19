@@ -41,7 +41,7 @@ return(
     width="25"
     height="25"
     fill='black'
-    class="bi bi-arrow-clockwise"
+    className="bi bi-arrow-clockwise"
     viewBox="0 0 16 16"
   >
     <path
