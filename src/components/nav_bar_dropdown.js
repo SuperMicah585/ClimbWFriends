@@ -2,7 +2,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import React, { useState, useEffect,useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const NavBarDropDown = ({addCimbModalShow,climbsArrayforSearch}) => {
+const NavBarDropDown = ({addCimbModalShow,climbsArrayforSearch,navBarCallback}) => {
 
 //Will have sub options appear as another bar that shoots out from dropdown as a 2nd column use triangle icon :) 
   const [isHovered, setIsHovered] = useState(false);
@@ -64,6 +64,25 @@ switch(text){
   setDocDropDownTrigger(false)
   setactionsDropDownTrigger(false)
   break
+  case 'About':
+    navBarCallback(text)
+    setfilterToggle(false)
+    setDocDropDownTrigger(false)
+    setactionsDropDownTrigger(false)
+    break
+  case 'Usage':
+    navBarCallback(text)
+    setfilterToggle(false)
+    setDocDropDownTrigger(false)
+    setactionsDropDownTrigger(false)
+    break
+  case 'Contact':
+    navBarCallback(text)
+    setfilterToggle(false)
+    setDocDropDownTrigger(false)
+    setactionsDropDownTrigger(false)
+    break
+
 
 }
 

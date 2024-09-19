@@ -16,6 +16,9 @@ import sprout from './sprout.png'
 import Navbar from './components/nav_bar'
 import DownloadButton from './components/download_button'
 import NavBarDropDown from './components/nav_bar_dropdown'
+import AboutModal from './components/about_modal'
+import ContactModal from './components/contact_modal'
+import UsageModal from './components/usage_modal'
 /*
 TODO
 
@@ -38,6 +41,9 @@ function App() {
     const [climbgeoData,setClimbGeoData] = useState([])
     const [climbsArrayforSearch,setClimbsArrayforSearch] = useState([])
     const [nameButtonColorArray,setNameButtonColorArray] = useState({})
+    const [showAboutModal,setShowAboutModal] = useState(0)
+    const [showContactModal,setShowContactModal] = useState(0)
+    const [showUsageModal,setShowUsageModal] = useState(0)
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
@@ -88,6 +94,22 @@ const setGeoClimbData = (climbArray) => {
 
   }
 
+  const navBarCallback = (item) => {
+    switch(item){
+        case 'About':
+            setShowAboutModal(showAboutModal+1)
+          break
+        case 'Usage':
+            setShowUsageModal(showUsageModal+1)
+          break
+        case 'Contact':
+            setShowContactModal(showContactModal+1)
+          break
+      }
+
+
+  }
+
  
 
   
@@ -132,7 +154,7 @@ const setGeoClimbData = (climbArray) => {
                 <div style = {{display:'flex'}}>
                 <img src={sprout} style = {{marginLeft: '10px',marginTop:'5px',zIndex:1004,width:'60px', height:'60px', borderRadius: '50%' }} />
                 <div style = {{marginLeft: '20px'}}> </div>
-                <Navbar style = {{zIndex:1004}}/>
+                <Navbar navBarCallback = {navBarCallback} style = {{zIndex:1004}}/>
                 </div>
                 <div
                     style={{
@@ -201,7 +223,7 @@ const setGeoClimbData = (climbArray) => {
                         fontFamily: 'Comic Sans MS, cursive'
                     }}
                 > 
-                <NavBarDropDown climbsArrayforSearch = {climbsArrayforSearch} addCimbModalShow = {addCimbModalShow}/>
+                <NavBarDropDown navBarCallback = {navBarCallback} climbsArrayforSearch = {climbsArrayforSearch} addCimbModalShow = {addCimbModalShow}/>
                 </div>
                 
                     
@@ -302,6 +324,9 @@ const setGeoClimbData = (climbArray) => {
                 <GeoShapes climbgeoData = {climbgeoData} modalTrigger = {CimbModalShow} climbsArray = {setclimbsArray}/>
                 <ClimbsModal nameButtonColorArray = {nameButtonColorArray} showClimbModal = {showClimbModal} climbsArray = {climbsArray}/>
                 <AddClimbModal buttonColorCallback = {buttonColorCallback} climbsArrayCallback = {climbsArrayCallback} setGeoClimbData = {setGeoClimbData} modalTrigger = {showModal}/>
+                <AboutModal showAboutModal = {showAboutModal}/>
+                <ContactModal showContactModal = {showContactModal} />
+                <UsageModal showUsageModal = {showUsageModal} />
                 <CreateMarker
                     queryType={queryType}
                     coordinates={searchmarkerCoordinates}
