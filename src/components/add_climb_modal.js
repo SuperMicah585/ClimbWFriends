@@ -251,7 +251,7 @@ const AddClimbModal = ({modalTrigger,setGeoClimbData,climbsArrayCallback,buttonC
               />
           </Form.Group>
           <Form.Group className="mb-3" controlId="Micah">
-              <Form.Label style = {{fontFamily: 'Comic Sans MS, cursive'}}>Climber Name</Form.Label>
+              <Form.Label style = {{fontFamily: 'Comic Sans MS'}}>Climber Name</Form.Label>
               <Form.Control
                   isInvalid = {nameErrorAlert}
                   onChange={(event) => {setName(event.target.value);setNameErrorAlert(false)}} 
@@ -270,7 +270,7 @@ const AddClimbModal = ({modalTrigger,setGeoClimbData,climbsArrayCallback,buttonC
       <Modal backdrop={isLoading?"static":true} show={show} onHide={handleClose}>
         <Modal.Header>
      
-          <Modal.Title style = {{fontFamily: 'Comic Sans MS, cursive',color: '#048c7f'}}>Add Climbs from Mountain Project</Modal.Title>
+          <Modal.Title style = {{fontFamily: 'Comic Sans MS',color: '#048c7f'}}>Add Climbs from Mountain Project</Modal.Title>
 
 
         </Modal.Header>
@@ -317,7 +317,7 @@ const AddClimbModal = ({modalTrigger,setGeoClimbData,climbsArrayCallback,buttonC
             <div style = {{marginLeft: '10px',width: '450px'}}>
             <Form>
                 <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label style = {{marginTop: '5px',fontFamily: 'Comic Sans MS, cursive'}}>Upload JSON file</Form.Label>
+                    <Form.Label style = {{marginTop: '5px',fontFamily: 'Comic Sans MS'}}>Upload JSON file</Form.Label>
                     <Form.Control isInvalid	= {errorAlertUpload} type="file" onChange = {handleFileInput}/>
                 </Form.Group>
             </Form>
