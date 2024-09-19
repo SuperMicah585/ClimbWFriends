@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 
-const CreateMarker = ({ coordinates,queryType }) => {
+const CreateMarker = ({ coordinates}) => {
 
   const map = useMap();
   const [marker,setMarker] = useState(0)

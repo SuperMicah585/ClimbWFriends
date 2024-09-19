@@ -1,10 +1,10 @@
 import React,{useRef,useEffect,useState} from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import {GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 //import data from './test.json'
 import L from 'leaflet';
 import * as turf from '@turf/turf';
-import {convertToGeoJSON,convertData} from './data_parser';
+import {convertToGeoJSON} from './data_parser';
 
   const GeoJSONMap = ({climbsArray,modalTrigger,climbgeoData}) => {
 
@@ -58,7 +58,6 @@ useEffect(() => {
   }
 }
 
-console.log(data.features,"asdaijskdna")
 setClimberCount(total_climber_set.size)
   if(data?.features){
 
@@ -99,7 +98,7 @@ const onEachFeature = (feature, layer) => {
     }
   }
 
-  console.log(feature.properties.total_climbers,'climbercounttotal',tmpsetForNameCount.size,"featureclimbercount")
+
   layerRef.current.push(layer);
   
   const climberPercentage = tmpsetForNameCount.size/feature.properties.total_climbers

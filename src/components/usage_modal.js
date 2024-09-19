@@ -1,8 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import {Modal,Card} from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import ToggleButton from 'react-bootstrap/ToggleButton';
+import {Modal} from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 
 

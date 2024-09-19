@@ -42,7 +42,6 @@ const downloadFile = () => {
 
 
 const handleClick = (text) => {
-console.log(text,"sdfsdfksmndfks")
 switch(text){
  case 'Docs':
   setDocDropDownTrigger(!docDropDownTrigger)
@@ -101,12 +100,8 @@ const toggleFilter = () =>{
 useEffect(() => {
   // Function to handle clicks outside the div
   const handleClickOutside = (event) => {
-
-    console.log(!filterRef.current?.contains(event.target),'filtered')
-    console.log(!actionsRef.current?.contains(event.target),'actions')
-    console.log(!docsRef.current?.contains(event.target),'docs')
  
-    console.log(event.type)
+
     if ((!toggleRef.current?.contains(event.target)) && (!filterRef.current?.contains(event.target)) &&
     (!actionsRef.current?.contains(event.target)) &&
     (!docsRef.current?.contains(event.target))

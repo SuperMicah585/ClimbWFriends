@@ -1,6 +1,5 @@
-import React, { useEffect,useState } from 'react';
+import React, {useState } from 'react';
 import { useMap } from 'react-leaflet';
-import L from 'leaflet';
 
 
 

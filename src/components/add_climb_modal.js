@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import { useEffect, useState } from 'react';
-import {convertToGeoJSON,convertData} from './data_parser';
+import {convertData} from './data_parser';
 
 
 
@@ -168,7 +168,6 @@ const AddClimbModal = ({modalTrigger,setGeoClimbData,climbsArrayCallback,buttonC
       let data = []
       setIsloading(true)
       const urlCheck = mpURL.split('/')
-      console.log(urlCheck.length,check.length)
 
         if (!(
             (urlCheck[0] === check[0]) && 
@@ -191,7 +190,6 @@ const AddClimbModal = ({modalTrigger,setGeoClimbData,climbsArrayCallback,buttonC
       else{
       try {
         // Make a request to the Flask server using fetch
-        console.log(`https://phelpsm4.pythonanywhere.com/scrapeclimbs?mpURL=${encodeURIComponent(mpURL)}&name=${encodeURIComponent(name)}`)
         const fetchResponse = await fetch(`https://phelpsm4.pythonanywhere.com/scrapeclimbs?mpURL=${encodeURIComponent(mpURL)}&name=${encodeURIComponent(name)}`);
     
         if (!fetchResponse.ok) {
