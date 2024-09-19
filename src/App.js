@@ -219,7 +219,7 @@ const setGeoClimbData = (climbArray) => {
                         position: 'absolute',
                         left: '10px',
                         marginTop: '5px',
-                        fontFamily: 'Comic Sans MS, cursive'
+                        fontFamily: 'Comic Sans MS'
                     }}
                 > 
                 <NavBarDropDown navBarCallback = {navBarCallback} climbsArrayforSearch = {climbsArrayforSearch} addCimbModalShow = {addCimbModalShow}/>
@@ -295,7 +295,7 @@ const setGeoClimbData = (climbArray) => {
                         marginTop: '15px',
                         display:'flex',
                         alignItems: 'flex-end',
-                        fontFamily: 'Comic Sans MS, cursive'
+                        fontFamily: 'Comic Sans MS'
                     }}
                 > 
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>

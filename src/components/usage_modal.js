@@ -42,7 +42,7 @@ useEffect(() => {
       className="modal show"
       style={{ display: 'block', position: 'initial' }}
     >
-      <Modal onHide={handleClose} style = {{fontFamily: 'Comic Sans MS, cursive'}}show = {show}>
+      <Modal onHide={handleClose} style = {{fontFamily: 'Comic Sans MS'}}show = {show}>
         <Modal.Header>
           <Modal.Title style = {titleStyle} >Usage</Modal.Title>
         </Modal.Header>

@@ -40,7 +40,7 @@ return(
         {items.map((item) => 
             <>
             <div  onClick ={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-            style={{cursor: 'pointer',fontSize:'20px', fontWeight: 'bold',color: (isHovered && hoveredValue==item)? '#cc5500':'#048c7f', fontFamily: 'Comic Sans MS, cursive' }}>
+            style={{cursor: 'pointer',fontSize:'20px', fontWeight: 'bold',color: (isHovered && hoveredValue==item)? '#cc5500':'#048c7f', fontFamily: 'Comic Sans MS' }}>
             {item}
             </div>
             <div style = {{marginLeft: '20px'}}> </div>

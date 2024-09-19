@@ -32,7 +32,7 @@ const ClimbsModal = ({climbsArray,showClimbModal,nameButtonColorArray})=> {
         overflow: 'hidden', // hide any overflowing text
         textOverflow: 'ellipsis', // add ellipsis (...) for overflowing text
         color: 'white',
-        fontFamily: 'Comic Sans MS, cursive',
+        fontFamily: 'Comic Sans MS',
         backgroundColor: nameButtonColorArray[item]
       }
       };
@@ -45,7 +45,7 @@ const ClimbsModal = ({climbsArray,showClimbModal,nameButtonColorArray})=> {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
      
-          <Modal.Title style = {{fontFamily: 'Comic Sans MS, cursive', color: '#048c7f'}}>Climbs</Modal.Title>
+          <Modal.Title style = {{fontFamily: 'Comic Sans MS', color: '#048c7f'}}>Climbs</Modal.Title>
 
 
         </Modal.Header>
@@ -61,11 +61,11 @@ const ClimbsModal = ({climbsArray,showClimbModal,nameButtonColorArray})=> {
     marginBottom: '10px', 
   }}
 >
-  <div style = {{fontSize: '18px', fontFamily: 'Comic Sans MS, cursive'}}>
+  <div style = {{fontSize: '18px', fontFamily: 'Comic Sans MS'}}>
   {item.name}
   </div>
 
-  <div style = {{marginLeft: '5px',marginTop: '5px', fontSize: '10px', color: 'grey', fontFamily: 'Comic Sans MS, cursive'}}>
+  <div style = {{marginLeft: '5px',marginTop: '5px', fontSize: '10px', color: 'grey', fontFamily: 'Comic Sans MS'}}>
   {item.grade}
   </div>
 </Card.Title>

@@ -242,7 +242,7 @@ const AddClimbModal = ({modalTrigger,setGeoClimbData,climbsArrayCallback,buttonC
     const mpInput = (
       <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label style = {{ marginTop: '5px',fontFamily: 'Comic Sans MS, cursive'}}>Mountain Project URL</Form.Label>
+              <Form.Label style = {{ marginTop: '5px',fontFamily: 'Comic Sans MS'}}>Mountain Project URL</Form.Label>
               <Form.Control
                   isInvalid	= {errorAlert} 
                   onChange={(event) => {handleChange(event)}} 

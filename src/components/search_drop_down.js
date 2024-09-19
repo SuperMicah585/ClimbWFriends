@@ -86,7 +86,7 @@ return (
   style={{
     backgroundColor: hoveredIndex === index ? 'Whitesmoke' : 'white',
     cursor: 'pointer',
-    fontFamily: 'Comic Sans MS, cursive' 
+    fontFamily: 'Comic Sans MS' 
   }}
   key={index} onClick={() => handleClick(item)}>
     {item}

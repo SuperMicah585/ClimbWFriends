@@ -136,7 +136,7 @@ finally {
                               },
                             },
                             '& .MuiInputLabel-root': {
-                              fontFamily: 'Comic Sans MS, cursive', // Style the label
+                              fontFamily: 'Comic Sans MS', // Style the label
                             }
                           }}
                     />

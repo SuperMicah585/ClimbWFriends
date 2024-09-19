@@ -184,7 +184,7 @@ return (
   style={{
     backgroundColor: hoveredIndex === 'Docs' ? 'Whitesmoke' : 'white',
     cursor: 'pointer',
-    fontFamily: 'Comic Sans MS, cursive',
+    fontFamily: 'Comic Sans MS',
     fontSize:'18px'
   }}
   key={'Docs'} onClick={() => handleClick('Docs')}>
@@ -199,7 +199,7 @@ return (
   style={{
     backgroundColor: hoveredIndex === 'Actions' ? 'Whitesmoke' : 'white',
     cursor: 'pointer',
-    fontFamily: 'Comic Sans MS, cursive',
+    fontFamily: 'Comic Sans MS',
     fontSize:'18px'
   }}
   key={'Actions'} onClick={() => handleClick('Actions')}>
@@ -223,7 +223,7 @@ return (
   style={{
     backgroundColor: hoveredIndex === item ? 'Whitesmoke' : 'white',
     cursor: 'pointer',
-    fontFamily: 'Comic Sans MS, cursive',
+    fontFamily: 'Comic Sans MS',
     fontSize:'18px'
   }}
   key={item} onClick={() => handleClick(item)}>
@@ -245,7 +245,7 @@ return (
   style={{
     backgroundColor: hoveredIndex === item ? 'Whitesmoke' : 'white',
     cursor: 'pointer',
-    fontFamily: 'Comic Sans MS, cursive',
+    fontFamily: 'Comic Sans MS',
     fontSize:'18px'
   }}
   key={item} onClick={() => handleClick(item)}>
