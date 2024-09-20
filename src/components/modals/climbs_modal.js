@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 const ClimbsModal = ({ climbsArray, showClimbModal, nameButtonColorArray }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   useEffect(() => {
     if (climbsArray.length > 0) {
       setShow(true);
@@ -28,6 +28,12 @@ const ClimbsModal = ({ climbsArray, showClimbModal, nameButtonColorArray }) => {
     };
   };
 
+//
+  const mp_page = ( item ) => { 
+      const url = `https://www.mountainproject.com/route/${item.id}/${encodeURIComponent(item.name)}`;
+      window.open(url, '_blank'); // Open in a new tab
+  };
+//https://www.mountainproject.com/route/${climb.id}/{climb.name}
   return (
     <div
       className="modal show"
@@ -43,13 +49,19 @@ const ClimbsModal = ({ climbsArray, showClimbModal, nameButtonColorArray }) => {
         </Modal.Header>
         <Modal.Body style={{ maxHeight: "400px", overflowY: "auto" }}>
           {climbsArray.map((item, index) => (
+            
+            <div key = {`mp-${item.id}`} style = {{backgroundColor: (item.id===hoveredIndex?'Whitesmoke':'white'),cursor:'pointer',paddingLeft:'10px',borderRadius:'10px'}}
+            onMouseEnter={() => setHoveredIndex(item.id)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            onClick = {()=>mp_page(item)}>
+        
             <div
               key={index}
               style={{ marginTop: "10px", borderBottom: "1px solid lightgrey" }}
             >
-              <Card.Title style={{ marginBottom: "10px" }}>
+              <Card.Title style={{ marginBottom: "10px" }}>  
                 <div style={{ fontSize: "18px", fontFamily: "Comic Sans MS" }}>
-                  {item.name}
+                  {item.name}  
                 </div>
                 <div
                   style={{
@@ -85,6 +97,7 @@ const ClimbsModal = ({ climbsArray, showClimbModal, nameButtonColorArray }) => {
                   ))}
                 </div>
               </Card.Text>
+              </div>
             </div>
           ))}
         </Modal.Body>
