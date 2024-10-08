@@ -17,6 +17,7 @@
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -26,20 +27,33 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-    "eslintConfig": {
-      "extends": [
-        "react-app",
-        "react-app/jest"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "^_"
+        }
       ],
-      "rules": {
-        "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-        "eqeqeq": ["warn", "always"],
-        "default-case": ["warn"],
-        "react-hooks/exhaustive-deps": ["warn", {
+      "eqeqeq": [
+        "warn",
+        "always"
+      ],
+      "default-case": [
+        "warn"
+      ],
+      "react-hooks/exhaustive-deps": [
+        "warn",
+        {
           "additionalHooks": "useCallback"
-        }]
-      }
-    },
+        }
+      ]
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",

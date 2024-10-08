@@ -13,7 +13,9 @@ const GeoJSONMap = ({ climbsArray, modalTrigger, climbgeoData }) => {
   const [climberCount, setClimberCount] = useState(0);
   //console.log(geoJSONRef.current)
   const pointToLayer = (feature, latlng) => {
-    return L.circle(latlng, { radius: 100 });
+    return L.circleMarker(latlng, { 
+      radius: 10, // radius in pixels
+    });
   };
 
   useEffect(() => {
